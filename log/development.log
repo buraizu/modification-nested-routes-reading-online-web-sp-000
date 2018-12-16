@@ -3881,3 +3881,12 @@ Processing by PostsController#new as HTML
   Rendered posts/_form.html.erb (20.2ms)
   Rendered posts/new.html.erb within layouts/application (28.8ms)
 Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/4/posts/new" for 98.225.21.27 at 2018-12-16 01:41:30 +0000
+Cannot render console from 98.225.21.27! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  Rendered posts/_form.html.erb (4.5ms)
+  Rendered posts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 85ms (Views: 84.4ms | ActiveRecord: 0.0ms)
