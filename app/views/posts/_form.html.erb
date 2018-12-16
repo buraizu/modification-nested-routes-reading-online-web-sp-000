@@ -1,9 +1,9 @@
 <%= form_for(@post) do |f| %>
-  <label>Post title:</label><br>
-  <% if @post.author.nil? %>
-    <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+  <%= author_id_field(@post) %>
   <br />
-  <% end %>
+
+  <label>Post title:</label><br>
+  
   <%= f.hidden_field :author_id %>
 
   <%= f.text_field :title %><br>
@@ -13,3 +13,10 @@
 
   <%= f.submit %>
 <% end %>
+
+
+
+<!-- # <% if @post.author.nil? %>   Allowed selection of existing Authors before creating author_id_field Helper
+#   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+# <br />
+# <% end %> -->
