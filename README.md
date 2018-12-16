@@ -1,3 +1,10 @@
+<!-- # <% if @post.author.nil? %>       Allowed selection of existing Authors from within posts.new.html.erb before creating author_id_field Helper
+#   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+# <br />
+# <% end %> -->
+
+
+
 # Modifying Nested Resources
 
 ## Objectives

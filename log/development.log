@@ -4369,3 +4369,40 @@ Processing by AuthorsController#show as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
   [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
   Rendered authors/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 56ms (Views: 44.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/authors/4/posts/new" for 98.225.21.27 at 2018-12-16 02:21:26 +0000
+Cannot render console from 98.225.21.27! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  [1m[35mAuthor Exists (0.2ms)[0m  SELECT  1 AS one FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/_form.html.erb (4.7ms)
+  Rendered posts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 53ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 98.225.21.27 at 2018-12-16 02:21:33 +0000
+Cannot render console from 98.225.21.27! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered posts/_form.html.erb (38.5ms)
+  Rendered posts/new.html.erb within layouts/application (39.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000003cdab60>:0x007f8488d4ba98>):
+    17: 
+    18: 
+    19: <!-- # <% if @post.author.nil? %>   Allowed selection of existing Authors before creating author_id_field Helper
+    20: #   <%= f.select :author_id, options_from_collection_for_select(Author.all, :id, :name) %>
+    21: # <br />
+    22: # <% end %> -->
+  app/views/posts/_form.html.erb:20:in `_app_views_posts__form_html_erb__544436453668376135_70103604214840'
+  app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb___1765226593978792660_31854300'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.9ms)
